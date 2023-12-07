@@ -1,9 +1,5 @@
 package com.votacao.desafio.api.domain.entities;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> e33342494c083583c1a18f95d23a715cd1ce39f3
 import java.io.Serializable;
 
 import jakarta.persistence.Column;

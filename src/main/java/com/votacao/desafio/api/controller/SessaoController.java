@@ -9,25 +9,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-<<<<<<< HEAD
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-=======
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
->>>>>>> e33342494c083583c1a18f95d23a715cd1ce39f3
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.votacao.desafio.api.domain.entities.Sessao;
-<<<<<<< HEAD
-=======
-import com.votacao.desafio.api.domain.entities.Voto;
->>>>>>> e33342494c083583c1a18f95d23a715cd1ce39f3
 import com.votacao.desafio.api.domain.service.SessaoService;
 
 @RestController
@@ -36,11 +24,6 @@ public class SessaoController {
     @Autowired
     private SessaoService sessaoService;
 
-<<<<<<< HEAD
-=======
-    
-	//@ApiOperation(value = "Cadastra uma viagem")
->>>>>>> e33342494c083583c1a18f95d23a715cd1ce39f3
 	@RequestMapping(value = "/v1/sessao/{pautaId}", method = RequestMethod.POST, produces = "application/json" )
 	@ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<Sessao> abrirSessao(@PathVariable Long pautaId) {
@@ -61,26 +44,15 @@ public class SessaoController {
             return ResponseEntity.ok(sessao);
         } catch (IllegalArgumentException e) {
             e.printStackTrace(); // Log the exception
-<<<<<<< HEAD
             throw e;
-=======
-            throw e; // Relançar a exceção para ser capturada pelo @ExceptionHandler
->>>>>>> e33342494c083583c1a18f95d23a715cd1ce39f3
         }
     }
 
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<String> handleIllegalArgumentException(IllegalArgumentException e) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
-<<<<<<< HEAD
-    }    
-    
-=======
     }
-    
-    
-	//@ApiOperation(value = "Retorna todas as viagens")
->>>>>>> e33342494c083583c1a18f95d23a715cd1ce39f3
+
 	@RequestMapping(value = "/v1/sessoes", method = RequestMethod.GET, produces = "application/json")
 	public ResponseEntity<List<Sessao>> listar() {
 		List<Sessao> sessoes = null;

@@ -23,10 +23,7 @@ public class SessaoService {
     private PautaRepository pautaRepository;
 
     public Sessao abrirSessao(Long pautaId, Duration duracao) {
-<<<<<<< HEAD
     	
-=======
->>>>>>> e33342494c083583c1a18f95d23a715cd1ce39f3
         // Verifica se a Pauta existe
         Optional<Pauta> pautaOpt = pautaRepository.findById(pautaId);
         Pauta pauta = pautaOpt.orElseThrow(() -> new IllegalArgumentException("Pauta não encontrada: " + pautaId));
@@ -44,12 +41,7 @@ public class SessaoService {
         return sessao;
     }
     
-<<<<<<< HEAD
     public List<Sessao> listarTodas() {    	
-=======
-    public List<Sessao> listarTodas() {
-    	
->>>>>>> e33342494c083583c1a18f95d23a715cd1ce39f3
     	List<Sessao> sessoes = sessaoRepository.findAll();
     	return sessoes;
     	
