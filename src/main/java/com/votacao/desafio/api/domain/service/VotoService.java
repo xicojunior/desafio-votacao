@@ -48,10 +48,18 @@ public class VotoService {
     
 	public Voto votarN(Voto voto) {
         
+<<<<<<< HEAD
 		Associado associado = associadoRepository.findById(voto.getAssociado().getId() )
                 .orElseThrow(() -> new IllegalArgumentException("Associado não encontrado"));
 
         Pauta pauta = pautaRepository.findById(voto.getPauta().getId() )
+=======
+		/*
+		Associado associado = associadoRepository.findById(voto.getAssociadoId())
+                .orElseThrow(() -> new IllegalArgumentException("Associado não encontrado"));
+
+        Pauta pauta = pautaRepository.findById(voto.getPautaId())
+>>>>>>> e33342494c083583c1a18f95d23a715cd1ce39f3
                 .orElseThrow(() -> new IllegalArgumentException("Pauta não encontrada"));
 
 
@@ -60,6 +68,11 @@ public class VotoService {
             throw new IllegalArgumentException("Associado já votou nesta pauta");
         }  
         
+<<<<<<< HEAD
+=======
+         */
+		
+>>>>>>> e33342494c083583c1a18f95d23a715cd1ce39f3
         return votoRepository.save(voto);
 	}
 	

@@ -22,6 +22,11 @@ public class VotoController {
     @Autowired
     private VotoService votoService;
 
+<<<<<<< HEAD
+=======
+    
+	//@ApiOperation(value = "Cadastra uma viagem")
+>>>>>>> e33342494c083583c1a18f95d23a715cd1ce39f3
 	@RequestMapping(value = "/v1/voto/votar", method = RequestMethod.POST, consumes = "application/json", produces = "application/json" )
 	@ResponseStatus(HttpStatus.CREATED)
 	@ResponseBody
@@ -37,6 +42,10 @@ public class VotoController {
     }
 	
 	
+<<<<<<< HEAD
+=======
+	//@ApiOperation(value = "Cadastra uma viagem")
+>>>>>>> e33342494c083583c1a18f95d23a715cd1ce39f3
 	@RequestMapping(value = "/v1/voto/votare", method = RequestMethod.POST, consumes = "application/json", produces = "application/json" )
 	@ResponseStatus(HttpStatus.CREATED)
 	@ResponseBody
@@ -63,6 +72,10 @@ public class VotoController {
     */
 	
 	
+<<<<<<< HEAD
+=======
+	//@ApiOperation(value = "Retorna todas as viagens")
+>>>>>>> e33342494c083583c1a18f95d23a715cd1ce39f3
 	@RequestMapping(value = "/v1/votos", method = RequestMethod.GET, produces = "application/json")
 	public ResponseEntity<List<Voto>> listar() {
 		List<Voto> votos = null;
