@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import java.util.Random;
 
 @Component
-public class CpfValidationFacade {
+public class CpfValidacaoFacade {
 
     public ResponseEntity<String> validateCpf(String cpf) {
         Random random = new Random();
