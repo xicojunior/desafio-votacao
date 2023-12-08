@@ -52,27 +52,6 @@ public class Pauta implements Serializable{
         return Objects.hash(id);
     }
 
-    public int contarVotosPositivos() {
-        return (int) votos.stream().filter(Voto::getVoto).count();
-    }
-
-    public int contarVotosNegativos() {
-        return (int) votos.stream().filter(v -> !v.getVoto()).count();
-    }
-
-    public String resultadoVotacao() {
-        int votosPositivos = contarVotosPositivos();
-        int votosNegativos = contarVotosNegativos();
-
-        if (votosPositivos > votosNegativos) {
-            return "Aprovação da Pauta";
-        } else if (votosNegativos > votosPositivos) {
-            return "Rejeição da Pauta";
-        } else {
-            return "Empate";
-        }
-    }
-
 	public Long getId() {
 		return id;
 	}

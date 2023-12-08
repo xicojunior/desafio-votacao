@@ -2,6 +2,7 @@ package com.votacao.desafio.api.domain.service;
 
 
 import com.votacao.desafio.api.domain.entities.Pauta;
+import com.votacao.desafio.api.domain.entities.Voto;
 import com.votacao.desafio.api.domain.repository.PautaRepository;
 
 import java.util.List;
@@ -30,16 +31,38 @@ public class PautaService {
     }
     
     public Pauta listarPauta(Long pautaId){
-    	Optional<Pauta> pautas = pautaRepository.findById(pautaId);
-    	return pautas.get();
+    	Optional<Pauta> pauta = Optional.empty();
+    	pauta = pautaRepository.findById(pautaId);
+    	if ( pauta.isPresent() ) {
+    		return pauta.get();
+    	} else {
+    		return null;
+    	}
     }
 
-    /*
-    public String resultadoVotacao(Long pautaId) {
+    public String resultadoVotos(Long pautaId) {
         Pauta pauta = pautaRepository.findById(pautaId)
                 .orElseThrow(() -> new IllegalArgumentException("Pauta não encontrada"));
-        return pauta.resultadoVotacao();
+        
+        int votosFavor = this.contarVotosFavor( pauta.getVotos());
+        int votosContra = this.contarVotosContra( pauta.getVotos());
+        
+        if (votosFavor > votosContra) {
+            return "Aprovação da Pauta";
+        } else if (votosContra > votosFavor) {
+            return "Rejeição da Pauta";
+        } else {
+            return "Empate";
+        }
+
     }
-    */
+    
+    public int contarVotosFavor(List<Voto> votos) {
+        return (int) votos.stream().filter(Voto::getVoto).count();
+    }
+
+    public int contarVotosContra(List<Voto> votos) {
+        return (int) votos.stream().filter(v -> !v.getVoto()).count();
+    }
     
 }

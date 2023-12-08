@@ -45,6 +45,14 @@ public class PautaController {
 		Pauta pauta = this.pautaService.listarPauta(pautaId);
 		return ResponseEntity.status(HttpStatus.OK).body(pauta);
 	}
+	
+	
+	@RequestMapping(value = "/v1/pauta/contar/{pautaId}", method = RequestMethod.GET, produces = "application/json")
+	public ResponseEntity<String> contarVotos(@PathVariable("pautaId") Long pautaId) {
+		String resultado = this.pautaService.resultadoVotos(pautaId);
+		return ResponseEntity.status(HttpStatus.OK).body(resultado);
+	}
+
 
 	
 }

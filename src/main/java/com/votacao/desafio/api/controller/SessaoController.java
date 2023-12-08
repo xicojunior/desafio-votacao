@@ -48,11 +48,6 @@ public class SessaoController {
         }
     }
 
-    @ExceptionHandler(IllegalArgumentException.class)
-    public ResponseEntity<String> handleIllegalArgumentException(IllegalArgumentException e) {
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
-    }
-
 	@RequestMapping(value = "/v1/sessoes", method = RequestMethod.GET, produces = "application/json")
 	public ResponseEntity<List<Sessao>> listar() {
 		List<Sessao> sessoes = null;
